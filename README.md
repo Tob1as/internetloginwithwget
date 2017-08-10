@@ -9,8 +9,8 @@ Use:
 * ``` git clone https://github.com/TobiasH87/internetloginwithwget.git internetlogin && cd ./internetlogin/ && chmod +x *.sh && chmod 600 login_config.cfg ```
 * Edit ``` login_config.cfg ``` - File and enter your credentials (username and password).
 * Login
-	* manually with: ``` ./login_wohnheim_uni_mainz_de.sh login ``` 
-	* automatically with, when not logged in: ``` ./networkmonitoring.sh ```  (for crontab: @reboot /path/to/folder/internetlogin/networkmonitoring.sh)
+	* manually: ``` ./login_wohnheim_uni_mainz_de.sh login ``` 
+	* automatically, when not logged in: ``` ./networkmonitoring.sh ```  (for crontab: @reboot /path/to/folder/internetlogin/networkmonitoring.sh)
 
 Note:
 * This script is successful tested with *Debian 9 Skretch*.

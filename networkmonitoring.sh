@@ -39,23 +39,3 @@ while true; do
 	let ERROR=0
     sleep $waittime
 done;
-
-# Alternative (with one host):
-#targetpingdevice=134.93.178.2   #uni-mainz.de   # insert IP or hostname for ping target
-#
-#while true; do
-#	echo "Check start at $(date)"
-#	# check ping received
-#	#pingvalue=$(ping -qc $countpings $targetpingdevice | grep 'received' | awk -F',' '{ print $2 }' | awk '{ print $1 }')
-#	#pingvalue=$(ping -qc $countpings $targetpingdevice | grep -oP '\d+(?= received)')
-#	# check packet loss in %
-#	pingvalue=$(ping -qc $countpings $targetpingdevice | grep -oP '\d+(?=% packet loss)')
-#	if [ $pingvalue -ge 50 ]; then
-#		echo "Host : $targetpingdevice is not available (ping failed) at $(date)"
-#		# login again
-#		echo "Logging in... at $(date)"
-#       ./login_wohnheim_uni_mainz_de.sh login > /dev/null
-#		continue
-#	fi
-#   sleep $waittime
-#done;

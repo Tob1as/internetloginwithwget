@@ -17,3 +17,4 @@ Note:
 * if _source_ not found then write your credentials directly in the login_wohnheim_uni_mainz_de.sh.
 * if _bash_ not found then write sh instead of bash in head of *.sh files.
 * other Mirror: [GitLab.RLP.net](https://gitlab.rlp.net/stwmz-nags/internetloginwithwget)
+* on Windows install [Cygwin](https://cygwin.com/) to use or use Powershell-Version for Windows: [Click](https://github.com/TobiasH87/PowerShellScripts/tree/master/internetloginwithpowershell)

@@ -35,7 +35,7 @@ while true; do
 	# login again, when more then 50% pings to hosts failed
 	#let ERROR_Percent=$((200*$ERROR/$COUNTER % 2 + 100*$ERROR/$COUNTER))
 	let ERROR_Percent=$((100*$ERROR/$COUNTER))
-	printf "%.2f%% ping failed\n" $ERROR_Percent
+	printf "%.2f%% ping lost\n" $ERROR_Percent
 	if [ $ERROR_Percent -gt 50 ]; then
 		echo "Logging in... at $(date)"
 		./login_wohnheim_uni_mainz_de.sh login > /dev/null

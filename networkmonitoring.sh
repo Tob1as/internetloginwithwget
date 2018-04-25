@@ -28,6 +28,8 @@ while true; do
 		if [ $pingvalue -ge 50 ]; then
 			echo "Host : $HOST is not available (ping failed) at $(date)"
 			let ERROR=ERROR+1
+		else 
+			echo "Host : $HOST is available (ping successful) at $(date)"
 		fi
 		let COUNTER=COUNTER+1
 	done

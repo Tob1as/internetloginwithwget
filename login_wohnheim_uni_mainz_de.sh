@@ -7,13 +7,29 @@
 # Dependency: wget
 #
 
-#ZDV_USERNAME=		# Insert ZDV-Username here
-#ZDV_PASSWORD=		# Insert corresponding Password here
-
-source ./login_config.cfg
+account() {
+	configfile='./login_config.cfg'
+	
+	if [ -f $configfile -a -r $configfile ]; then
+		source $configfile
+	else
+		# Fill out the following two lines if you don't want to use a configuration file or a user query.
+		ZDV_USERNAME='myuser'
+		ZDV_PASSWORD='mypassword'
+	fi
+	
+	if [ -z "$ZDV_USERNAME" -o -z "$ZDV_PASSWORD" -o "$ZDV_USERNAME" == 'myuser' -o "$ZDV_PASSWORD" == 'mypassword' ]; then
+		read -p "Username: " ZDV_USERNAME
+		read -sp "Password: " ZDV_PASSWORD
+	fi
+	
+	# only for debug!
+	#echo "Username: $ZDV_USERNAME ; Password: $ZDV_PASSWORD"
+}
 
 login() {
-	echo "Logging in..."
+	account
+	echo -e "\nLogging in..."
 	wget --post-data "user=$ZDV_USERNAME&pass=$ZDV_PASSWORD" --delete-after --quiet https://login.wohnheim.uni-mainz.de/cgi-bin/login-cgi
 }
 
